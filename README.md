@@ -36,6 +36,7 @@
 </div>
 
 ### :fire: My Stats :
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=anittavargh)](https://git.io/streak-stats)
+![Anitta's GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=anittavargh&theme=radical)
 
+![trophy](https://github-profile-trophy.vercel.app/?username=anittavargh&theme=radical)
 
