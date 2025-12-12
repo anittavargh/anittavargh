@@ -2,16 +2,16 @@ name: Metrics
 
 on:
   schedule:
-    - cron: "0 0 * * *" # every day
+    - cron: "0 0 * * *" # every day (UTC)
   workflow_dispatch:
-  push:
-    branches: ["main"]
 
 permissions:
   contents: write
 
 jobs:
   achievements:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -23,11 +23,13 @@ jobs:
           base: ""
           plugin_achievements: yes
           plugin_achievements_threshold: B
-          plugin_achievements_secrets: yes
+          plugin_achievements_secrets: no
           plugin_achievements_display: compact
           plugin_achievements_limit: 0
 
   header:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -41,6 +43,8 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
 
   lines:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -53,6 +57,8 @@ jobs:
           plugin_lines: yes
 
   activity_community:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -66,6 +72,8 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
 
   iso_calendar:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -81,6 +89,8 @@ jobs:
           plugin_isocalendar_duration: full-year
 
   habits:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -93,13 +103,15 @@ jobs:
           base: ""
           config_timezone: ${{ secrets.USER_TIMEZONE }}
           plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
+          plugin_habits_from: 1000
+          plugin_habits_days: 30
           plugin_habits_charts: yes
           plugin_habits_trim: yes
           plugin_habits_facts: yes
 
   issue_pr_lang:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -117,6 +129,8 @@ jobs:
           plugin_languages_sections: most-used
 
   repositories:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
