@@ -70,6 +70,8 @@ jobs:
           template: classic
           base: activity, community
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+          config_display: compact
+          config_padding: 0, 8%
 
   iso_calendar:
     permissions:
