@@ -94,6 +94,7 @@ jobs:
           plugin_isocalendar_duration: full-year
 
   habits:
+    needs: repositories
     permissions:
       contents: write
     runs-on: ubuntu-latest
