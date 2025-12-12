@@ -1,16 +1,15 @@
-## Hi there 👋
+# Hi, I'm Anitta 👋
 
-<!--
-**anittavargh/anittavargh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+![Header](./header.svg)
 
-Here are some ideas to get you started:
+## 🔥 Streak
+![Streak](./streak.svg)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🈷️ Languages
+![Languages](./languages.svg)
+
+## 💡 Habits
+![Habits](./habits.svg)
+
+## 📅 Calendar
+![Calendar](./iso_calendar.svg)
