@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td colspan="2" align="center">
-      <img src="./header.svg" width="1050" />
+      <img src="./header.svg" width="900" />
     </td>
   </tr>
 
