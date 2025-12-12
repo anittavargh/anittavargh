@@ -27,8 +27,6 @@ jobs:
           plugin_achievements_display: compact
           plugin_achievements_limit: 0
           plugin_achievements_ignored: manager
-          debug: yes
-          debug_flags: achievements
 
   header:
     permissions:
