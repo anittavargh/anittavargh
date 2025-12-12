@@ -1,5 +1,3 @@
-# Hi, I'm Anitta 👋
-
 <table>
   <tr>
     <td colspan="2" align="center">
