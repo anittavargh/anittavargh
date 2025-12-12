@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td colspan="2" align="center">
+    <td colspan="2" align="left">
       <img src="./header.svg" width="520" />
     </td>
   </tr>
