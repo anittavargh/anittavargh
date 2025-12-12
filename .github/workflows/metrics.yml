@@ -3,7 +3,7 @@ name: Metrics
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # daily (UTC)
 
 permissions:
   contents: write
@@ -12,55 +12,39 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Header / Overview
+      - name: Generate metrics dashboard
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          user: anittavarghese
+          user: anittavargh
+
+          # Output file (one big svg)
+          filename: github-metrics.svg
           template: classic
-          filename: header.svg
+
+          # The top sections you see (repos, activity, community)
           base: header, activity, community
 
-      - name: Streak
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user: anittavarghese
-          template: classic
-          filename: streak.svg
-          base: ""
+          # 3D contributions calendar (bottom-left)
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # Commit streak + commits/day (center-left)
           plugin_streak: yes
 
-      - name: Languages
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user: anittavarghese
-          template: classic
-          filename: languages.svg
-          base: ""
+          # Languages bar (center)
           plugin_languages: yes
-          plugin_languages_limit: 8
+          plugin_languages_limit: 12
+          plugin_languages_sections: most-used
 
-      - name: Habits
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user: anittavarghese
-          template: classic
-          filename: habits.svg
-          base: ""
+          # Issues/PRs status bars (right-middle)
+          plugin_followup: yes
+
+          # Coding habits (bottom-left text)
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: yes
 
-      - name: Isometric calendar
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user: anittavarghese
-          template: classic
-          filename: iso_calendar.svg
-          base: ""
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          # Achievements (bottom-right)
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
