@@ -20,5 +20,10 @@
       <img src="./lines-of-code.svg" width="1050" />
     </td>
   </tr>
-    <td align="center"><img src="./github-habits.svg" width="520" /></td>
+
+  <tr>
+  <td align="center"><img src="./github-habits.svg" width="520" /></td>
+  <!-- <td align="center"><img src="./achievements.svg" width="520" /></td> -->
+</tr>
 </table>
+
