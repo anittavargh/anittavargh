@@ -14,10 +14,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@master
         with:
           filename: achievements.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           base: ""
@@ -33,10 +40,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: header.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
@@ -48,10 +62,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: lines-of-code.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           base: ""
@@ -62,10 +83,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: acti_comm.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
@@ -79,10 +107,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: iso_calender.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
@@ -97,10 +132,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: github-habits.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
@@ -118,10 +160,17 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: issue_pr_lang.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
@@ -137,12 +186,20 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+
       - uses: lowlighter/metrics@latest
         with:
           filename: repositories.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ steps.app-token.outputs.token }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: anittavargh
           template: classic
           base: repositories
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+
